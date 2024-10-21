@@ -24,7 +24,9 @@ jobs:
       - name: Build Windows Installer
         run: |
           mvn clean install
-          jpackage --type exe --input target/ --name traceApp --main-jar traceApp-1.0-SNAPSHOT.jar --main-class com.trace.traceApp --icon src/main/resources/icons/icon.ico --dest target/
+          jpackage --type exe --input target/ --name traceApp --main-jar traceApp-1.0-SNAPSHOT.jar --main-class com.trace.traceApp --icon src/main/resources/icons/icon.ico --dest target/ --win-shortcut --win-menu --win-dir-chooser
+          ls target/
+
 
       - name: Upload Windows artifact
         uses: actions/upload-artifact@v3
