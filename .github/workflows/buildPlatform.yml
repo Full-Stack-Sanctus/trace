@@ -24,7 +24,7 @@ jobs:
       - name: Build Windows Installer
         run: |
           mvn clean install
-          jpackage --type exe --input target/ --name traceApp --main-jar traceApp-1.0-SNAPSHOT.jar --main-class com.trace.traceApp --runtime-image custom-runtime --icon src/main/resources/icons/icon.ico --dest target/ --win-shortcut --win-menu --win-dir-chooser --win-shortcut-launcher
+          jpackage --type exe --input target/ --name traceApp --main-jar traceApp-1.0-SNAPSHOT.jar --main-class com.trace.traceApp --runtime-image custom-runtime --icon src/main/resources/icons/icon.ico --dest target/ --win-shortcut --win-menu --win-dir-chooser
           ls target/
 
 
