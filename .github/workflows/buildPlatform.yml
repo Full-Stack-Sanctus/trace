@@ -48,7 +48,7 @@ jobs:
         run: |
           mvn clean install
           jpackage --type pkg --input target/ --name traceApp --main-jar traceApp-1.0-SNAPSHOT.jar --main-class com.trace.traceApp --icon src/main/resources/icons/icon.icns --dest target/
-          ls
+          ls target/
 
       - name: Upload macOS artifact
         uses: actions/upload-artifact@v3
