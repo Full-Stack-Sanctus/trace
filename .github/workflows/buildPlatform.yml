@@ -30,7 +30,7 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: windows-installer
-          path: target/YourAppName-*.exe
+          path: target/traceApp-*.exe
 
   build-macos:
     runs-on: macos-latest
@@ -53,7 +53,7 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: macos-installer
-          path: target/YourAppName-*.pkg
+          path: target/traceApp-*.pkg
 
   build-linux:
     runs-on: ubuntu-latest
@@ -76,4 +76,4 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: linux-installer
-          path: target/YourAppName-*.deb
+          path: target/traceApp-*.deb
