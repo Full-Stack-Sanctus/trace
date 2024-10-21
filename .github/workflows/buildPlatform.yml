@@ -78,4 +78,4 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: linux-installer
-          path: target/traceApp-*amd64.deb
+          path: target/traceapp_*.deb
