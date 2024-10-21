@@ -32,7 +32,7 @@ This project is a Sales Management System developed as a personal project by me.
     mvn clean install
 ```
     
-4.  **Run the application**:
+2.  **Run the application**:
     
     -   Execute the JAR file located in the `Sales` directory.
     
