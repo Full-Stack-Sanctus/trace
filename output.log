@@ -1,0 +1,31 @@
+[[1;34mINFO[m] Scanning for projects...
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m-------------------------< [0;36mcom.trace:traceApp[0;1m >-------------------------[m
+[[1;34mINFO[m] [1mBuilding traceApp 1.0-SNAPSHOT[m
+[[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mexec-maven-plugin:3.0.0:java[m [1m(default-cli)[m @ [36mtraceApp[0;1m ---[m
+[[1;33mWARNING[m] 
+[1;31mjava.awt.HeadlessException[m
+    [1mat[m java.awt.GraphicsEnvironment.checkHeadless ([1mGraphicsEnvironment.java:208[m)
+    [1mat[m java.awt.Window.<init> ([1mWindow.java:548[m)
+    [1mat[m java.awt.Frame.<init> ([1mFrame.java:423[m)
+    [1mat[m java.awt.Frame.<init> ([1mFrame.java:388[m)
+    [1mat[m javax.swing.JFrame.<init> ([1mJFrame.java:180[m)
+    [1mat[m View.LoginView.<init> ([1mLoginView.java:16[m)
+    [1mat[m com.trace.traceApp.main ([1mtraceApp.java:22[m)
+    [1mat[m org.codehaus.mojo.exec.ExecJavaMojo$1.run ([1mExecJavaMojo.java:254[m)
+    [1mat[m java.lang.Thread.run ([1mThread.java:829[m)
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;34mINFO[m] [1;31mBUILD FAILURE[m
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;34mINFO[m] Total time:  1.320 s
+[[1;34mINFO[m] Finished at: 2024-10-21T07:48:42Z
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;31mERROR[m] Failed to execute goal [32morg.codehaus.mojo:exec-maven-plugin:3.0.0:java[m [1m(default-cli)[m on project [36mtraceApp[m: [1;31mAn exception occured while executing the Java class. null[m: HeadlessException -> [1m[Help 1][m
+[[1;31mERROR[m] 
+[[1;31mERROR[m] To see the full stack trace of the errors, re-run Maven with the [1m-e[m switch.
+[[1;31mERROR[m] Re-run Maven using the [1m-X[m switch to enable full debug logging.
+[[1;31mERROR[m] 
+[[1;31mERROR[m] For more information about the errors and possible solutions, please read the following articles:
+[[1;31mERROR[m] [1m[Help 1][m http://cwiki.apache.org/confluence/display/MAVEN/MojoExecutionException
