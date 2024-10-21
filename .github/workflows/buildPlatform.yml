@@ -1,0 +1,79 @@
+name: Build Cross-Platform Installers
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build-windows:
+    runs-on: windows-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up JDK 14+
+        uses: actions/setup-java@v3
+        with:
+          distribution: 'adopt'
+          java-version: '21'
+
+      - name: Build Windows Installer
+        run: |
+          mvn clean install
+          jpackage --type exe --input target/ --name YourAppName --main-jar your-app-1.0-SNAPSHOT.jar --main-class com.trace.traceApp --icon path/to/icon.ico --dest target/
+
+      - name: Upload Windows artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: windows-installer
+          path: target/YourAppName-*.exe
+
+  build-macos:
+    runs-on: macos-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up JDK 14+
+        uses: actions/setup-java@v3
+        with:
+          distribution: 'adopt'
+          java-version: '21'
+
+      - name: Build macOS Installer
+        run: |
+          mvn clean install
+          jpackage --type pkg --input target/ --name YourAppName --main-jar your-app-1.0-SNAPSHOT.jar --main-class com.trace.traceApp --icon path/to/icon.icns --dest target/
+
+      - name: Upload macOS artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: macos-installer
+          path: target/YourAppName-*.pkg
+
+  build-linux:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up JDK 14+
+        uses: actions/setup-java@v3
+        with:
+          distribution: 'adopt'
+          java-version: '21'
+
+      - name: Build Linux Installer
+        run: |
+          mvn clean install
+          jpackage --type deb --input target/ --name YourAppName --main-jar your-app-1.0-SNAPSHOT.jar --main-class com.trace.traceApp --icon path/to/icon.png --dest target/
+
+      - name: Upload Linux artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: linux-installer
+          path: target/YourAppName-*.deb
