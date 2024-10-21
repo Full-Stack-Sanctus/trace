@@ -24,7 +24,7 @@ jobs:
       - name: Build Windows Installer
         run: |
           mvn clean install
-          jpackage --type exe --input target/ --name traceApp --main-jar traceApp-1.0-SNAPSHOT.jar --main-class com.trace.traceApp --icon src/main/resources/icons/icon.ico --dest apps/
+          jpackage --type exe --input target/ --name traceApp --main-jar traceApp-1.0-SNAPSHOT.jar --main-class com.trace.traceApp --icon src/main/resources/icons/icon.ico --dest target/
 
       - name: Upload Windows artifact
         uses: actions/upload-artifact@v3
@@ -47,7 +47,7 @@ jobs:
       - name: Build macOS Installer
         run: |
           mvn clean install
-          jpackage --type pkg --input target/ --name traceApp --main-jar traceApp-1.0-SNAPSHOT.jar --main-class com.trace.traceApp --icon src/main/resources/icons/icon.icns --dest apps/
+          jpackage --type pkg --input target/ --name traceApp --main-jar traceApp-1.0-SNAPSHOT.jar --main-class com.trace.traceApp --icon src/main/resources/icons/icon.icns --dest target/
 
       - name: Upload macOS artifact
         uses: actions/upload-artifact@v3
@@ -70,7 +70,7 @@ jobs:
       - name: Build Linux Installer
         run: |
           mvn clean install
-          jpackage --type deb --input target/ --name traceApp --main-jar traceApp-1.0-SNAPSHOT.jar --main-class com.trace.traceApp --icon src/main/resources/icons/icon.png --dest apps/
+          jpackage --type deb --input target/ --name traceApp --main-jar traceApp-1.0-SNAPSHOT.jar --main-class com.trace.traceApp --icon src/main/resources/icons/icon.png --dest target/
 
       - name: Upload Linux artifact
         uses: actions/upload-artifact@v3
