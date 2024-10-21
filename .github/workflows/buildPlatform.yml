@@ -69,11 +69,13 @@ jobs:
 
       - name: Build Linux Installer
         run: |
-          mvn clean install
-          jpackage --type deb --input target/ --name traceApp --main-jar traceApp-1.0-SNAPSHOT.jar --main-class com.trace.traceApp --icon src/main/resources/icons/icon.png --dest target/
+        mvn clean install
+        jpackage --type deb --input target/ --name traceApp --main-jar traceApp-1.0-SNAPSHOT.jar --main-class com.trace.traceApp --icon src/main/resources/icons/icon.png --dest target/
+        ls target/  # List files in target directory
 
       - name: Upload Linux artifact
         uses: actions/upload-artifact@v3
         with:
-          name: linux-installer
+          name: installers/linux/traceApp.deb
           path: target/traceApp-*.deb
+
